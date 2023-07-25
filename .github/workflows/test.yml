@@ -32,6 +32,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: zephyr-build
+          
+      - name: copy
+        run: mv central.elf centry.elf
                   
       - name: Run tests on latest Renode
         uses: antmicro/renode-test-action@v2.0.0
