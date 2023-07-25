@@ -9,7 +9,7 @@ Should Run Bluetooth sample
 
     Execute Command           mach add "central"
     Execute Command           machine LoadPlatformDescription @platforms/cpus/nrf52840.repl
-    Execute Command           sysbus LoadELF @/home/runner/work/renode-issue-485/renode-issue-485/central.elf
+    Execute Command           sysbus LoadELF @central.elf
     Execute Command           connector Connect sysbus.radio wireless
 
     Execute Command           showAnalyzer ${UART}
@@ -18,7 +18,7 @@ Should Run Bluetooth sample
     Execute Command           mach add "peripheral"
     Execute Command           mach set "peripheral"
     Execute Command           machine LoadPlatformDescription @platforms/cpus/nrf52840.repl
-    Execute Command           sysbus LoadELF @/home/runner/work/renode-issue-485/renode-issue-485/periph.elf
+    Execute Command           sysbus LoadELF @periph.elf
     Execute Command           connector Connect sysbus.radio wireless
 
     Execute Command           showAnalyzer ${UART}
