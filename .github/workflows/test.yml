@@ -32,6 +32,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: zephyr-build
+          
+      - name: Verify binaries are downloaded
+        run: sudo apt-get install tree -y && tree
                   
       - name: Run tests on latest Renode
         uses: antmicro/renode-test-action@v2.0.0
