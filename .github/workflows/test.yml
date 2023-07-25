@@ -32,7 +32,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build-results
-          path: artifacts
+          path: $GITHUB_WORKSPACE
           
       - name: find artifacts
         run: find / -name central.elf
