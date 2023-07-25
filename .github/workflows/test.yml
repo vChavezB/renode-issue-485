@@ -34,7 +34,7 @@ jobs:
           name: zephyr-build
           
       - name: find artifacts
-        run: ls artifacts
+        run: sudo apt-get install tree -y & tree
 
         
       - name: Run tests on latest Renode
