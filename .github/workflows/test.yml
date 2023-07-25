@@ -42,6 +42,7 @@ jobs:
             renode-version: 'latest'
             tests-to-run: 'test.robot'
             renode-path: renode-latest
+            artifacts-path: ${{ github.workspace }}
 
 
       - name: Archive latest results
@@ -62,6 +63,7 @@ jobs:
             renode-version: '1.13.3'
             tests-to-run: 'test.robot'
             renode-path: renode-1.13
+            artifacts-path: ${{ github.workspace }}
 
 
       - name: Archive Renode release results
