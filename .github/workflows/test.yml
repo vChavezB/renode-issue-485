@@ -33,7 +33,7 @@ jobs:
         with:
           name: zephyr-build
           
-      - name: Verify binaries are downloaded
+      - name: Verify binaries path
         run: sudo apt-get install tree -y && tree
                   
       - name: Run tests on latest Renode
