@@ -18,7 +18,7 @@ jobs:
       - name: Archive build results
         uses: actions/upload-artifact@v2
         with:
-            name: build-results
+            name: zephyr-build
             path: |
                 artifacts
   test:
@@ -28,14 +28,13 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v2
         
-      - name: Download build artifacts
+      - name: Download zephyr binaries
         uses: actions/download-artifact@v2
         with:
-          name: build-results
-          path: $GITHUB_WORKSPACE
+          name: zephyr-build
           
       - name: find artifacts
-        run: find / -name central.elf
+        run: ls artifacts
 
         
       - name: Run tests on latest Renode
