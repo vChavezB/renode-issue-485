@@ -21,6 +21,7 @@ jobs:
 
 
       - name: Archive build results
+        uses: actions/upload-artifact@v2
         with:
             name: build-results
             path: |
