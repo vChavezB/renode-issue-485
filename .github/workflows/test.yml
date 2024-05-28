@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     container: 
-      image: ghcr.io/zephyrproject-rtos/ci:v0.26.2
+      image: ghcr.io/zephyrproject-rtos/ci:v0.26.12
       options: --user root
     steps:    
       - name: Clone repository
