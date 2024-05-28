@@ -46,7 +46,6 @@ jobs:
             renode-version: 'latest'
             tests-to-run: 'test.robot'
             renode-run-path: '${{ runner.temp }}/renode-latest'
-            artifacts-path: ${{ github.workspace }}
 
 
       - name: Archive latest results
