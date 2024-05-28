@@ -49,7 +49,7 @@ jobs:
         run: sudo apt-get install tree -y && tree
                   
       - name: Run tests on latest Renode
-        uses: antmicro/renode-test-action@v2.0.0
+        uses: antmicro/renode-test-action@v3.1.0
         with:
             renode-version: 'latest'
             tests-to-run: 'test.robot'
@@ -69,10 +69,10 @@ jobs:
 
 
       - name: Run tests on Renode stable release
-        uses: antmicro/renode-test-action@v2.0.0
+        uses: antmicro/renode-test-action@v3.1.0
         if: always()
         with:
-            renode-version: '1.13.3'
+            renode-version: '1.15.0'
             tests-to-run: 'test.robot'
             renode-path: renode-1.13
             artifacts-path: ${{ github.workspace }}
