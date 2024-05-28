@@ -5,7 +5,7 @@ set -e
 cd $GITHUB_WORKSPACE
 west init -l .
 west update -o=--depth=1 -n
-ls
+ls ..
 mkdir build_periph
 mkdir build_central
 chmod +x /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh
