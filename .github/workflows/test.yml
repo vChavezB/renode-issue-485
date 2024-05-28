@@ -23,7 +23,7 @@ jobs:
           mv build_periph/zephyr/zephyr.elf $GITHUB_WORKSPACE/artifacts/periph.elf
           mv build_central/zephyr/zephyr.elf $GITHUB_WORKSPACE/artifacts/central.elf
       - name: Archive build results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
             name: zephyr-build
             path: |
@@ -49,7 +49,7 @@ jobs:
 
 
       - name: Archive latest results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: always()
         with:
             name: test-results-latest
