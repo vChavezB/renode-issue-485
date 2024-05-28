@@ -5,9 +5,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container: 
-      image: nordicplayground/nrfconnect-sdk:v2.4-branch
+      image: ghcr.io/zephyrproject-rtos/ci:v0.26.2
       options: --user root
     steps:    
       - name: Clone repository
