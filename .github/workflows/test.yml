@@ -45,7 +45,7 @@ jobs:
         with:
             renode-version: 'latest'
             tests-to-run: 'test.robot'
-            renode-path: renode-latest
+            renode-run-path: renode-latest
             artifacts-path: ${{ github.workspace }}
 
 
@@ -66,6 +66,7 @@ jobs:
         with:
             renode-version: '1.15.0'
             tests-to-run: 'test.robot'
+            renode-run-path: renode-1.15.0
             artifacts-path: ${{ github.workspace }}
 
 
