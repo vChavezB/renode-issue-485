@@ -18,8 +18,6 @@ jobs:
           west update -o=--depth=1 -n
           mkdir build_periph
           mkdir build_central
-          sed -i -e '$iCONFIG_BT_ASSERT=n' $GITHUB_WORKSPACE/../zephyr/samples/bluetooth/peripheral_hr/prj.conf
-          sed -i -e '$iCONFIG_BT_ASSERT=n' $GITHUB_WORKSPACE/../zephyr/samples/bluetooth/central_hr/prj.conf
           cat $GITHUB_WORKSPACE/../zephyr/samples/bluetooth/peripheral_hr/prj.conf
           west build --board nrf52840dk/nrf52840 --build-dir build_periph $GITHUB_WORKSPACE/../zephyr/samples/bluetooth/peripheral_hr
           west build --board nrf52840dk/nrf52840 --build-dir build_central $GITHUB_WORKSPACE/../zephyr/samples/bluetooth/central_hr
