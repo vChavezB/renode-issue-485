@@ -15,7 +15,7 @@ jobs:
       - name: Build Zephyr Binaries
         run: |
           cd /tmp/
-          west init -l $GITHUB_WORKSPACE
+          west init
           west update -o=--depth=1 -n
           mkdir build_periph
           mkdir build_central
