@@ -14,6 +14,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build Zephyr Binaries
         run: |
+          ls /opt/toolchains
           west init -l .
           ls $GITHUB_WORKSPACE/..
           west update -o=--depth=1 -n
@@ -21,6 +22,7 @@ jobs:
           mkdir build_central
           ls /opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/cmake
           export Zephyr-sdk_DIR=/opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/cmake
+          export PATH=$PATH:/opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/cmake
           west build --board nrf52840dk/nrf52840 --build-dir build_periph $GITHUB_WORKSPACE/../zephyr/samples/bluetooth/peripheral_hr
           west build --board nrf52840dk/nrf52840 --build-dir build_central $GITHUB_WORKSPACE/../zephyr/samples/bluetooth/central_hr
           mv build_periph/zephyr/zephyr.elf $GITHUB_WORKSPACE/artifacts/periph.elf
