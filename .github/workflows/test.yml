@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Build Zephyr Binaries
         run: |
-          cd $GITHUB_WORKSPACE
-          west init -l .
+          cd /tmp/
+          west init -l $GITHUB_WORKSPACE
           west update -o=--depth=1 -n
           mkdir build_periph
           mkdir build_central
