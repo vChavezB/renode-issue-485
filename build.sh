@@ -2,8 +2,9 @@
 set -x
 set -e
 
-# Move to west workdir
-cd /workdir/project
+cd /tmp/
+west init
+west update -o=--depth=1 -n
 mkdir build_periph
 mkdir build_central
 # build the peripheral hr sample
