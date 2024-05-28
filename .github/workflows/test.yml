@@ -14,20 +14,16 @@ jobs:
         uses: actions/checkout@v2
       - name: Build Zephyr Binaries
         run: |
-          cd /tmp/
-          west init -l $GITHUB_WORKSPACE
+          west init -l .
           ls $GITHUB_WORKSPACE/..
           west update -o=--depth=1 -n
           mkdir build_periph
           mkdir build_central
-          west build --board nrf52840dk_nrf52840 --build-dir build_periph /tmp/zephyr/samples/bluetooth/peripheral_hr
-          west build --board nrf52840dk_nrf52840 --build-dir build_central /tmp/zephyr/samples/bluetooth/central_hr
-          
+          west build --board nrf52840dk_nrf52840 --build-dir build_periph $GITHUB_WORKSPACE/../zephyr/samples/bluetooth/peripheral_hr
+          west build --board nrf52840dk_nrf52840 --build-dir build_central $GITHUB_WORKSPACE/../zephyr/samples/bluetooth/central_hr
           # move build files to artifacts dir
           mv build_periph/zephyr/zephyr.elf $GITHUB_WORKSPACE/artifacts/periph.elf
           mv build_central/zephyr/zephyr.elf $GITHUB_WORKSPACE/artifacts/central.elf
-
-
       - name: Archive build results
         uses: actions/upload-artifact@v2
         with:
