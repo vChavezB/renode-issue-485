@@ -13,3 +13,4 @@ manifest:
         name-allowlist:
           - hal_nordic
           - cmsis
+          - tinycrypt
